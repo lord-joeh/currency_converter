@@ -15,6 +15,11 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
     });
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    };
+    
+
 app.post("/convert", async (req, res) =>{
     const params = {
         amount: req.body.amount,
@@ -26,7 +31,7 @@ app.post("/convert", async (req, res) =>{
     try {
         const results = await axios.get(`${API_URL}from=${params.from}&to=${params.to}&date=${params.date}&amount=${params.amount}&format=json`);
         console.log(results.data);
-        const rate = (results.data.result).toFixed(2);
+        const rate = numberWithCommas((results.data.result).toFixed(2));
         console.log(rate);
         res.render('index.ejs', { result: rate, error: null, currencyCode: params.to });
     } catch (error) {
