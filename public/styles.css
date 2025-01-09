@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0a146e;
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a146e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+}
+
+select{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    height: 50px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #f72585;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #0a146e;
+    color: white;
+}
+
+#result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #0a146e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+button:hover{
+    background-color: #7209b7;
+}
+
+select:hover, input:hover{
+    border: 1px solid #f72585;
+}
+
+input:focus, select:focus{
+    outline: none;
+    border: 1px solid #f72585;
+}
