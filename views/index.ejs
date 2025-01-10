@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>styles currency converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="main">
-        <h1>Styles Currency Converter</h1>
+        <h1 class="title">Styles Currency Converter</h1>
         <form action="/convert" method="post">
             <div class="converter">
                 <input type="number" name="amount" id="amount" placeholder="Enter amount">
-                <label for="from">From:</label>
+                <label for="from">From</label>
                 <select name="from" id="currency">
                     <option value="AED">United Arab Emirates Dirham (AED)</option>
                     <option value="AFN">Afghan Afghani (AFN)</option>
@@ -176,7 +180,9 @@
                     <option value="ZMW">Zambian Kwacha (ZMW)</option>
                     <option value="ZWL">Zimbabwean Dollar (ZWL)</option>
                 </select><br>
-                <label for="to">To:</label>
+                <img src="images/swap_icon.png" alt="swap icon" id="swap">
+                <br>
+                <label for="to">To</label>
                 <select name="to" id="currency">
                     <option value="AED">United Arab Emirates Dirham (AED)</option>
                     <option value="AFN">Afghan Afghani (AFN)</option>
@@ -323,7 +329,7 @@
                     <option value="TZS">Tanzanian Shilling (TZS)</option>
                     <option value="UAH">Ukrainian Hryvnia (UAH)</option>
                     <option value="UGX">Ugandan Shilling (UGX)</option>
-                    <option value="USD">United States Dollar (USD)</option>
+                    <option value="USD" selected>United States Dollar (USD)</option> <!-- Default selected option -->
                     <option value="UYU">Uruguayan Peso (UYU)</option>
                     <option value="UZS">Uzbekistani Soʻm (UZS)</option>
                     <option value="VES">Venezuelan Bolívar Soberano (VES)</option>
@@ -354,5 +360,15 @@
     <footer>
         <h4>Styles made with ❤️</h4>
     </footer>
+    <script>
+        const swap = document.getElementById('swap');
+        swap.addEventListener('click', () => {
+        const fromCurrency = document.querySelector('select[name="from"]');
+        const toCurrency = document.querySelector('select[name="to"]');
+        const temp = fromCurrency.value;
+        fromCurrency.value = toCurrency.value;
+        toCurrency.value = temp;
+    });
+    </script>
 </body>
 </html>
