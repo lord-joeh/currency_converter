@@ -15,7 +15,11 @@
         <h1 class="title">Styles Currency Converter</h1>
         <form action="/convert" method="post">
             <div class="converter">
-                <input type="number" name="amount" id="amount" placeholder="Enter amount">
+              <% if (locals.amount) { %> 
+                  <input type="number" name="amount" id="amount" placeholder="Enter amount" value="<%= locals.amount %>">
+                <%  } else { %>
+                    <input type="number" name="amount" id="amount" placeholder="Enter amount">
+                <% } %>
                 <label for="from">From</label>
                 <select name="from" id="currency">
                     <option value="AED">United Arab Emirates Dirham (AED)</option>
@@ -348,7 +352,7 @@
                 </select>
                 <br>
                 <% if (locals.result) { %>
-                    <input type="text" id="result" placeholder="Result" readonly value="<%= locals.currencyCodeTo %>  <%= locals.result %>">
+                    <input type="text" id="result" placeholder="Result" readonly value="<%= locals.To %>  <%= locals.result %>">
                 <% } else if (locals.error){ %>
                     <input type="text" id="result" placeholder="Result" readonly value="<%= locals.error %>">
                 <% } %>
@@ -369,12 +373,12 @@
             toCurrency.value = temp;
         });
 
-        if ("<%= locals.currencyCodeFrom ? true : false %>") { 
-            document.querySelector('select[name="from"]').value = "<%= locals.currencyCodeFrom %>";
+        if ("<%= locals.From ? true : false %>") { 
+            document.querySelector('select[name="from"]').value = "<%= locals.From %>";
         }
 
-        if ("<%= locals.currencyCodeTo ? 'true' : 'false' %>") { 
-            document.querySelector('select[name="to"]').value = "<%= locals.currencyCodeTo %>";
+        if ("<%= locals.To ? 'true' : 'false' %>") { 
+            document.querySelector('select[name="to"]').value = "<%= locals.To %>";
         }
     </script>
 </body>

@@ -37,8 +37,9 @@ app.post("/convert", async (req, res) => {
     res.render("index.ejs", {
       result: rate,
       error: null,
-      currencyCodeTo: params.to,
-      currencyCodeFrom: params.from,
+      To: params.to,
+      From: params.from,
+      amount: params.amount,
     });
   } catch (error) {
     console.error(error);
