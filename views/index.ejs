@@ -348,27 +348,34 @@
                 </select>
                 <br>
                 <% if (locals.result) { %>
-                    <input type="text" id="result" placeholder="Result" readonly value="<%= locals.currencyCode %>  <%= locals.result %>">
+                    <input type="text" id="result" placeholder="Result" readonly value="<%= locals.currencyCodeTo %>  <%= locals.result %>">
                 <% } else if (locals.error){ %>
                     <input type="text" id="result" placeholder="Result" readonly value="<%= locals.error %>">
                 <% } %>
                 <button id="convert">Convert</button>
             </div>
         </form>
-
-    </div>  
+    </div>
     <footer>
         <h4>Styles made with ❤️</h4>
     </footer>
     <script>
         const swap = document.getElementById('swap');
         swap.addEventListener('click', () => {
-        const fromCurrency = document.querySelector('select[name="from"]');
-        const toCurrency = document.querySelector('select[name="to"]');
-        const temp = fromCurrency.value;
-        fromCurrency.value = toCurrency.value;
-        toCurrency.value = temp;
-    });
+            const fromCurrency = document.querySelector('select[name="from"]');
+            const toCurrency = document.querySelector('select[name="to"]');
+            const temp = fromCurrency.value;
+            fromCurrency.value = toCurrency.value;
+            toCurrency.value = temp;
+        });
+
+        if ("<%= locals.currencyCodeFrom ? true : false %>") { 
+            document.querySelector('select[name="from"]').value = "<%= locals.currencyCodeFrom %>";
+        }
+
+        if ("<%= locals.currencyCodeTo ? 'true' : 'false' %>") { 
+            document.querySelector('select[name="to"]').value = "<%= locals.currencyCodeTo %>";
+        }
     </script>
 </body>
 </html>

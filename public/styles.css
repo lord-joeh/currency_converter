@@ -15,6 +15,7 @@
 }
 
 .title {
+  animation: slideFromTop 1s ease-out;
   font-family: "Source Code Pro", serif;
   font-optical-sizing: auto;
   font-weight: 800;
@@ -24,14 +25,18 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: white;
+  margin-bottom: 20px;
 }
 
 form {
+  animation: slideFromLeft 1s ease-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0a146e;
+  background-color: #EEEEEE;
+  color: black;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -48,12 +53,12 @@ input {
   margin: 10px 0;
   height: 50px;
   border: none;
+  background-color: white;
   border-radius: 5px;
   font-family: "Source Code Pro", serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-size: 1rem;
 }
 
 select {
@@ -62,6 +67,7 @@ select {
   padding: 10px;
   margin: 10px 0;
   border: none;
+  background-color: white;
   border-radius: 5px;
   font-family: "Source Code Pro", serif;
   font-optical-sizing: auto;
@@ -90,6 +96,7 @@ button {
 }
 
 footer {
+  animation: slideFromBottom 1s ease-out;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -118,6 +125,7 @@ footer {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+  animation: slideFromRight 1s ease-out; /* Add the animation here */
 }
 
 #swap {
@@ -149,4 +157,50 @@ select:focus {
 
 #swap:hover {
   background-color: #7209b7;
+}
+
+/* Add keyframes for animations */
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add keyframes for the slide from right animation */
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
