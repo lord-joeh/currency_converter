@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import axios from "axios";
 import "dotenv/config";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 const API_URL = process.env.API_URL;
 
 const app = express();
