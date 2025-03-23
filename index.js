@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import axios from "axios";
 import "dotenv/config";
 
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 const API_URL = process.env.API_URL;
 
 const app = express();
@@ -26,14 +26,14 @@ app.post("/convert", async (req, res) => {
     to: req.body.to,
     date: new Date().toISOString().split("T")[0],
   };
-  console.log(params);
+  // console.log(params);
   try {
     const results = await axios.get(
       `${API_URL}from=${params.from}&to=${params.to}&date=${params.date}&amount=${params.amount}&format=json`,
     );
-    console.log(results.data);
+    // console.log(results.data);
     const rate = numberWithCommas(results.data.result.toFixed(2));
-    console.log(rate);
+    // console.log(rate);
     res.render("index.ejs", {
       result: rate,
       error: null,
@@ -42,7 +42,7 @@ app.post("/convert", async (req, res) => {
       amount: params.amount,
     });
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     res.render("index.ejs", {
       result: null,
       error: "An error occurred during conversion. Please try again.",
@@ -50,6 +50,6 @@ app.post("/convert", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });

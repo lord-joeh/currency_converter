@@ -30,7 +30,7 @@
 }
 
 form {
-  animation: slideFromLeft 1s ease-out;
+  /* animation: slideFromLeft 1s ease-out; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,7 +125,7 @@ footer {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  animation: slideFromRight 1s ease-out; /* Add the animation here */
+  /* animation: slideFromRight 1s ease-out;*/
 }
 
 #swap {
