@@ -5,7 +5,7 @@ const Input = ({ type, placeholder, name, data = null, value, handleChange }) =>
     control: (base, state) => ({
       ...base,
       width: "100%",
-      height: "5rem",
+      height: "4rem",
       paddingLeft: "1.25rem",
       fontSize: "1.5rem",
       textAlign: "left",
@@ -70,7 +70,7 @@ const Input = ({ type, placeholder, name, data = null, value, handleChange }) =>
         handleChange({ name, value: selectedOption?.value })
       }
       lazyLoad
-      className="w-full"
+      className="w-full "
     />
   ) : (
     <input
@@ -82,7 +82,7 @@ const Input = ({ type, placeholder, name, data = null, value, handleChange }) =>
       onChange={(e) =>
         handleChange({ name, value: e.target.value })
       }
-      className="w-full mx-auto px-5 text-left text-gray-500 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-pink-500 hover:border-pink-500 h-20 text-2xl"
+      className="w-full mx-auto px-5 text-left text-gray-500 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-pink-500 hover:border-pink-500 h-16 text-2xl"
     />
   );
 };

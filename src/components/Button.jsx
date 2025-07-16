@@ -6,7 +6,7 @@ const Button = ({ value, isLoading = false, disabled = false }) => {
     <button
       type="submit"
       disabled={disabled || isLoading}
-      className={`w-full h-20 flex p-4 justify-center items-center rounded-xl text-3xl font-semibold transition-all duration-300 ease-in-out drop-shadow-xl/25 
+      className={`w-full h-16 flex justify-center items-center rounded-xl text-3xl font-semibold transition-all duration-300 ease-in-out drop-shadow-xl/25 
         ${
           disabled || isLoading
             ? "bg-pink-300 cursor-progress"

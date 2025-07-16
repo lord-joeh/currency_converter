@@ -10,7 +10,7 @@ function App() {
   const [formData, setFormData] = useState({
     amount: "",
     from: "USD",
-    to: "EUR",
+    to: "GHS",
   });
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
@@ -75,7 +75,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[url(/background.jpg)] bg-cover bg-center bg-no-repeat sm:max-w[95] sm:max-h-screen md:max-w[90vw] lg:max-w[80vw] xl:max-w[70vw] 2xl:max-w[60vw]">
-      <h1 className="text-4xl font-bold text-white font-[Source Code Pro] mb-0.5 text-center tracking-wide lg:text-5xl lg:mb-2">
+      <h1 className="text-4xl font-bold text-white font-[Source Code Pro] text-center tracking-wide lg:text-5xl mb-8">
         Styles Currency Converter
       </h1>
       <form
@@ -110,7 +110,7 @@ function App() {
 
         <div
           onClick={handleSwap}
-          className="absolute w-full flex justify-center mt-3 mb-3"
+          className="absolute w-full flex justify-center mt-5 mb-3"
         >
           <svg
             className="mx-auto z-20 relative hover:scale-110 transition-transform duration-300 ease-in-out cursor-pointer group"
@@ -175,7 +175,7 @@ function App() {
             disabled={loading}
           />
         </div>
-        <div className="resultsOrError w-full min-h-[3rem]">
+        <div className="resultsOrError w-full min-h-[2rem]">
           {error && (
             <p className="text-red-500 text-2xl text-left transition-all duration-300 ease-in-out">
               {error}
