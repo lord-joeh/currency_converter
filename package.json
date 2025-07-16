@@ -1,23 +1,48 @@
 {
   "name": "currency_converter",
-  "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "dev:client": "vite",
+    "build:client": "vite build",
+    "preview": "vite preview",
+    "dev:server": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "npm run build:client",
+    "render-build": "npm install && npm run build",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Lord Styles",
-  "license": "ISC",
-  "description": "currency converter app",
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
     "axios": "^1.7.9",
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
-    "ejs": "^3.1.10",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^8.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-select": "^5.10.2",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "prettier": "3.4.2"
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "concurrently": "^8.2.1",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "nodemon": "^3.0.2",
+    "vite": "^7.0.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }

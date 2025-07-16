@@ -8,15 +8,13 @@ A modern, user-friendly currency conversion application built with Node.js and E
 - Support for 170+ international currencies
 - Clean and intuitive user interface
 - Responsive design for all devices
-- Formatted numerical output with thousands separators
 
 ## Tech Stack
 
 - **Backend**: Node.js with Express.js
-- **Frontend**: EJS templating engine
-- **Styling**: Custom CSS
+- **Frontend**: React.js
+- **Styling**: Tailwind CSS
 - **HTTP Client**: Axios
-- **Environment Variables**: dotenv
 
 ## Prerequisites
 
@@ -59,28 +57,6 @@ Before running this application, make sure you have:
 
 3. Enter the amount you want to convert, select the source currency (From) and target currency (To), then click the convert button.
 
-## Project Structure
-
-```
-├── public/
-│   ├── images/
-│   │   └── swap_icon.png
-│   ├── favicon.ico
-│   └── styles.css
-├── views/
-│   └── index.ejs
-├── index.js
-├── package.json
-└── README.md
-```
-
-## Dependencies
-
-- `express`: ^4.21.2 - Web application framework
-- `ejs`: ^3.1.10 - Templating engine
-- `axios`: ^1.7.9 - HTTP client
-- `body-parser`: ^1.20.3 - Request body parsing middleware
-- `dotenv`: ^16.4.7 - Environment variable management
 
 ## License
 
