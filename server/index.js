@@ -41,14 +41,15 @@ app.get("/health", (req, res) => {
 });
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../../dist')));
+  const staticPath = path.join(__dirname, '../dist');
+  console.log('Static path:', staticPath);
   
-
+  app.use(express.static(staticPath));
+  
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
+    res.sendFile(path.join(staticPath, 'index.html'));
   });
 }
-
 const formatCurrency = (value, currency) => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
