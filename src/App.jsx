@@ -74,8 +74,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[url(/background.jpg)] bg-cover bg-center bg-no-repeat">
-      <h1 className="text-5xl font-bold text-white font-[Source Code Pro] text-center m-8 sr-only">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[url(/background.jpg)] bg-cover bg-center bg-no-repeat sm:max-w[95] sm:max-h-screen md:max-w[90vw] lg:max-w[80vw] xl:max-w[70vw] 2xl:max-w[60vw]">
+      <h1 className="text-4xl font-bold text-white font-[Source Code Pro] mb-0.5 text-center tracking-wide lg:text-5xl lg:mb-2">
         Styles Currency Converter
       </h1>
       <form
