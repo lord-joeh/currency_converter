@@ -67,8 +67,6 @@ const formatCurrency = (value, currency) => {
 app.post("/convert", async (req, res) => {
   const { amount, from, to } = req.body;
   
-  console.log("Received conversion request:", { amount, from, to }); 
-
   try {
     const date = new Date().toISOString().split("T")[0];
     const apiUrl = `${API_URL}from=${from}&to=${to}&date=${date}&amount=${amount}&format=json`;
