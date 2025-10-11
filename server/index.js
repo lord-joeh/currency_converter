@@ -7,6 +7,7 @@ import path from 'path';
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 dotenv.config();
+import process from "process";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
