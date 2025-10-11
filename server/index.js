@@ -22,6 +22,9 @@ if (!API_URL) {
 const app = express();
 
 
+const trustProxy = process.env.TRUST_PROXY ?? '1';
+app.set('trust proxy', trustProxy);
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
